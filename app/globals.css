@@ -283,6 +283,40 @@
   --text-body-xs-600--line-height: 12px;
   --text-body-xs-600--letter-spacing: 0;
   --text-body-xs-600--font-weight: 600;
+
+  /* custom breakpoints */
+  --breakpoint-xs: 320px;
+  --breakpoint-tiny: 360px;
+  --breakpoint-sm: 575px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+  --breakpoint-3xl: 1680px;
+  --breakpoint-4xl: 1920px;
+
+  /* container settings */
+  --container-xs: 320px;
+  --container-tiny: 360px;
+  --container-sm: 575px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1320px;
+  --container-2xl: 1320px;
+  --container-3xl: 1320px;
+  --container-4xl: 1320px;
+
+  /* mx auto*/
+  --container-center: true;
+
+  /* container padding */
+  --container-padding: 0rem; /* default */
+  --container-padding-xs: 0rem;
+  --container-padding-sm: 0rem;
+  --container-padding-md: 0rem;
+  --container-padding-lg: 0rem;
+  --container-padding-xl: 0rem;
+  --container-padding-2xl: 0rem;
 }
 
 :root {

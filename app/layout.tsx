@@ -1,3 +1,4 @@
+import Providers from '@/providers';
 import { publicSans } from './font';
 import './globals.css';
 
@@ -8,7 +9,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${publicSans.className}  antialiased`}>{children}</body>
+      <body className={`${publicSans.className}  antialiased`}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
