@@ -9,14 +9,38 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { m } from 'framer-motion';
+import axios from 'axios';
+import { TypeProductModel } from '@/types/models';
 
 export default function SearchInput({ className }: { className?: string }) {
   const [openDropdown, setOpenDropdown] = useState(false);
+  const [data, setData] = useState<TypeProductModel[]>([]);
+  const handleSearch = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const search = e.currentTarget.value;
+    if (search.length > 1) {
+      await axios
+        .get(process.env.NEXT_PUBLIC_API_URL + '/api/public/products', {
+          params: {
+            search: search,
+          },
+        })
+        .then(response => {
+          setData(response.data.data || []);
+          console.log(response.data);
+        })
+        .catch(err => {
+          console.log(err);
+        })
+        .finally(() => {});
+    }
+  };
   return (
-    <div className={cn('px-2 relative', className)}>
+    <div className={cn('px-2 relative z-50', className)}>
       <Input
         className='border-none shadow-none focus:ring-white'
+        placeholder='Search for anything'
         onMouseDown={() => setOpenDropdown(!openDropdown)}
+        onInput={handleSearch}
       />
       <Button variant='icon'>
         <Search />
@@ -34,62 +58,27 @@ export default function SearchInput({ className }: { className?: string }) {
         )}
       >
         <m.div className='flex flex-col gap-y-6 w-full'>
-          <Link
-            href=''
-            className='flex items-center gap-4 py-4 px-4 border-2 border-white hover:border-secondary-700'
-          >
-            <Image
-              src='https://cdn-icons-png.flaticon.com/128/2662/2662503.png'
-              width={100}
-              height={0}
-              alt='product image'
-            />
-            <div className='flex flex-col gap-1'>
-              <h3>Product Title</h3>
-              <Badge className='' variant='warning'>
-                10%
-              </Badge>
-              <h3>110$</h3>
-            </div>
-          </Link>
-
-          <Link
-            href=''
-            className='flex items-center gap-4 py-4 px-4 border-2 border-white hover:border-secondary-700'
-          >
-            <Image
-              src='https://cdn-icons-png.flaticon.com/128/2662/2662503.png'
-              width={100}
-              height={0}
-              alt='product image'
-            />
-            <div className='flex flex-col gap-1'>
-              <h3>Product Title</h3>
-              <Badge className='' variant='warning'>
-                10%
-              </Badge>
-              <h3>110$</h3>
-            </div>
-          </Link>
-
-          <Link
-            href=''
-            className='flex items-center gap-4 py-4 px-4 border-2 border-white hover:border-secondary-700'
-          >
-            <Image
-              src='https://cdn-icons-png.flaticon.com/128/2662/2662503.png'
-              width={100}
-              height={0}
-              alt='product image'
-            />
-            <div className='flex flex-col gap-1'>
-              <h3 className='font-[400]'>Product Title</h3>
-              <Badge className='' variant='warning'>
-                10%
-              </Badge>
-              <h3>110$</h3>
-            </div>
-          </Link>
+          {data?.map((item: TypeProductModel, idx) => (
+            <Link
+              key={idx}
+              href=''
+              className='flex items-center gap-4 py-4 px-4 border-2 border-white hover:border-secondary-700'
+            >
+              <Image
+                src={item.images[0].url}
+                width={100}
+                height={0}
+                alt='product image'
+              />
+              <div className='flex flex-col gap-1'>
+                <h3>{item.name}</h3>
+                <Badge className='' variant='warning'>
+                  - {item.discount} %
+                </Badge>
+                <h3>{item.price}$</h3>
+              </div>
+            </Link>
+          ))}
         </m.div>
       </m.div>
     </div>
