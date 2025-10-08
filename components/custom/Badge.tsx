@@ -12,9 +12,10 @@ const badgeVariants = cva(
         primary: '',
         secondary: '',
         success: '',
-        danger: '',
+        danger:
+          'bg-danger-700 border border-danger-500 hover:bg-danger-600 disabled: bg-danger-200 dark:text-danger-500 dark:hover:bg-danger-50 dark:border-danger-500 dark:disabled:bg-danger-200 dark:disabled:border-danger-200 px-2.5 py0.5',
         warning:
-          'bg-warning-500 border border-warning-500 hover:bg-warning-600 disabled: bg-warning-200 dark:text-warning-500 dark:hover:bg-wrning-50 dark:border-warning-500 dark:disabled:bg-danger-200 dark:disabled:border-danger-200 px-2.5 py0.5',
+          'bg-warning-500 border border-warning-500 hover:bg-warning-600 disabled: bg-warning-200 dark:text-warning-500 dark:hover:bg-warning-50 dark:border-warning-500 dark:disabled:bg-danger-200 dark:disabled:border-danger-200 px-2.5 py0.5',
         outline: '',
         gray: '',
       },

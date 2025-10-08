@@ -34,10 +34,10 @@ export default function Payment() {
           modules={[Navigation, Pagination]}
           //   onSlideChange={() => console.log('slide change')}
           //   onSwiper={swiper => console.log(swiper)}
-          className='p-[16px] border border-gray-100 flex items-center'
+          className='p-[16px] border border-gray-100 flex items-center '
         >
-          <SwiperSlide className=''>
-            <div className='flex items-center gap-[16px] p-[16px] justify-center'>
+          <SwiperSlide className='py-4'>
+            <div className='flex items-center gap-[16px] p-[16px] justify-center lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-gray-100'>
               <PackageIcon size={40} />
               <div className='flex flex-col gap-[16px]'>
                 <h6 className='text-label3 text-black uppercase'>
@@ -51,8 +51,8 @@ export default function Payment() {
             </div>
           </SwiperSlide>
 
-          <SwiperSlide className=''>
-            <div className='flex items-center gap-[16px] p-[16px] justify-center'>
+          <SwiperSlide className='py-4'>
+            <div className='flex items-center gap-[16px] p-[16px] justify-center lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-gray-100'>
               <TrophyIcon size={40} />
               <div className='flex flex-col gap-[16px]'>
                 <h6 className='text-label3 text-black uppercase'>
@@ -66,8 +66,8 @@ export default function Payment() {
             </div>
           </SwiperSlide>
 
-          <SwiperSlide className=''>
-            <div className='flex items-center gap-[16px] p-[16px] justify-center'>
+          <SwiperSlide className='py-4'>
+            <div className='flex items-center gap-[16px] p-[16px] justify-center lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-gray-100'>
               <CreditCardIcon size={40} />
               <div className='flex flex-col gap-[16px]'>
                 <h6 className='text-label3 text-black uppercase'>
@@ -81,8 +81,8 @@ export default function Payment() {
             </div>
           </SwiperSlide>
 
-          <SwiperSlide className=''>
-            <div className='flex items-center gap-[16px] p-[16px] justify-center'>
+          <SwiperSlide className='py-4'>
+            <div className='flex items-center gap-[16px] p-[16px] justify-center lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-gray-100'>
               <HeadphonesIcon size={40} />
               <div className='flex flex-col gap-[16px]'>
                 <h6 className='text-label3 text-black uppercase'>
