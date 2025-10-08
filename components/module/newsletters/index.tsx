@@ -1,79 +1,33 @@
 'use client';
-
-import Container from '@/components/custom/Container';
-import { RectangleButton } from '@/components/custom/RectangleButton';
-import { Input } from '@mui/material';
-import { Loader2Icon } from 'lucide-react';
-import Image from 'next/image';
+import {ArrowRight} from 'lucide-react';
 import React from 'react';
 
 export default function NewsLetter() {
-  return (
-    <section className='bg-secondary-700 py-[72px]'>
-      <Container>
-        <div className='w-full flex flex-col items-center justify-center gap-[32px]'>
-          <div className='flex flex-col gap-[12px] items-center'>
-            <h1 className='text-white text-center'>
-              Subscribe to our newsletter
-            </h1>
-            <p className='text-body-md-400 text-center text-white'>
-              Praesent fringilla erat a lacinia egestas. Donec vehicula tempor
-              libero et cursus. Donec non quam urna. Quisque vitae porta ipsum.
-            </p>
-          </div>
-
-          {/* forms */}
-          <div className='flex justify-center bg-white w-full lg:w-[624px]  p-[12px] gap-2 mx-auto'>
-            <Input
-              placeholder='Enter your email'
-              className='flex-1 text-black placeholder-gray-500 
-                placeholder:text-body-md-400 border-none focus-visible:ring-0'
-            />
-            <RectangleButton
-              icon='after'
-              size='sm'
-              variant='primary'
-              className=''
-            >
-              <Loader2Icon className='hidden mr-2 h-6 w-6 animate-spin' />
-              <span className='p-3'>subscribe</span>
-            </RectangleButton>
-          </div>
-
-          <div className='flex flex-wrap justify-center gap-[48px]'>
-            <Image
-              src='/images/logo/Google.png'
-              width={72}
-              height={23}
-              alt='image-logo'
-            />
-            <Image
-              src='/images/logo/amazon.png'
-              width={72}
-              height={23}
-              alt='image-logo'
-            />
-            <Image
-              src='/images/logo/philips.png'
-              width={72}
-              height={23}
-              alt='image-logo'
-            />
-            <Image
-              src='/images/logo/toshiba.png'
-              width={72}
-              height={23}
-              alt='image-logo'
-            />
-            <Image
-              src='/images/logo/samsung.png'
-              width={72}
-              height={23}
-              alt='image-logo'
-            />
-          </div>
+    return (
+        <div className="-mx-4 md:mx-0">
+            <div
+                className="bg-gradient-to-r from-[#1B6392] to-[#1B6392] text-white py-16 px-6">
+                <div className="max-w-2xl mx-auto text-center">
+                    <h2 className="text-3xl font-bold mb-3">Subscribe to our newsletter</h2>
+                    <p className="text-white/90 mb-8 text-sm leading-relaxed">
+                        Praesent fringilla erat a lacinia egestas. Donec vehicula tempor libero et cursus. Donec non
+                        quam urna.
+                        Quisque vitae porta ipsum.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-3 max-w-[36rem] mx-auto">
+                        <input
+                            type="email"
+                            placeholder="Email address"
+                            className="file:text-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input w-full min-w-0 rounded-md px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive flex-1 bg-white text-black border-0 h-12 placeholder:text-gray-400"
+                        />
+                        <button
+                            className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive py-2 has-[>svg]:px-3 bg-[#FF8A00] hover:bg-[#FF8A00]/90 text-white h-12 px-8 gap-2 whitespace-nowrap">
+                            SUBSCRIBE
+                            <ArrowRight className="h-4 w-4"/>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </Container>
-    </section>
-  );
+    );
 }
