@@ -65,7 +65,7 @@ export default function SearchInput({ className }: { className?: string }) {
               className='flex items-center gap-4 py-4 px-4 border-2 border-white hover:border-secondary-700'
             >
               <Image
-                src={item.images[0].url}
+                src={item.images[0]}
                 width={100}
                 height={0}
                 alt='product image'
