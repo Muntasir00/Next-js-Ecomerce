@@ -87,7 +87,11 @@ export default function CategoryList({
                             className='flex item-center gap-3 border p-3'
                           >
                             <Image
-                              src={itemFilter.images[0].url ?? ''}
+                              src={
+                                typeof itemFilter.images[0] === 'string'
+                                  ? itemFilter.images[0]
+                                  : itemFilter.images[0] ?? ''
+                              }
                               alt='card image'
                               width={80}
                               height={0}
